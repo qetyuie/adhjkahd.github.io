@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>c++2 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="函数探幽2020&#x2F;4&#x2F;232020&#x2F;4&#x2F;22">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++2">
+<meta property="og:url" content="http://yoursite.com/2020/04/22/c++2/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="函数探幽2020&#x2F;4&#x2F;232020&#x2F;4&#x2F;22">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-22T13:27:59.000Z">
+<meta property="article:modified_time" content="2020-04-23T08:15:35.862Z">
 <meta property="article:author" content="CodeOn">
 <meta name="twitter:card" content="summary">
   
@@ -146,103 +150,282 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-c++2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      c++2
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/c++2/" class="archive-article-date">
+
+        
+        <a href="/2020/04/22/c++2/" class="archive-article-date">
   	<time datetime="2020-04-22T13:27:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/c++2/">c++2</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="函数探幽"><a href="#函数探幽" class="headerlink" title="函数探幽"></a>函数探幽</h2><h4 id="2020-4-23"><a href="#2020-4-23" class="headerlink" title="2020/4/23"></a>2020/4/23</h4><h4 id="2020-4-22"><a href="#2020-4-22" class="headerlink" title="2020/4/22"></a>2020/4/22</h4><a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<h1 id="内联函数"><a href="#内联函数" class="headerlink" title="内联函数"></a>内联函数</h1><ol>
+<li>在函数声明前加上关键字inline，或者在函数定义前加上关键字inline。通常做法是省略原型，直接将定义放在提供原型的地方。</li>
+<li>程序员请求将函数作为内联函数时，编译器不一定会满足要求。因为它可能认为函数过大或者函数调用了直接。</li>
+</ol>
+<ul>
+<li>注：内联函数不能递归。</li>
+</ul>
+<blockquote>
+<p>inline double square (double x) { return x*x ; }<br>3. 内联与宏：内联时按值传递的，如int c ; a = square( c++ ) ; 宏不能按值传递。</p>
+</blockquote>
+<h1 id="引用变量"><a href="#引用变量" class="headerlink" title="引用变量"></a>引用变量</h1><ul>
+<li>用途<br>引用变量的主要用途是用作函数的形参通过将引用变量用作参数，函数将使用原始数据，而不是其副本。<br>典型用途，作为结构和对象的参数。</li>
+</ul>
+<hr>
+<ul>
+<li>引用必须在声明引用时将其初始化。引用更接近const指针，必须在创建时进行初始化，一旦与某个变量关联起来，就一直效忠与它。</li>
+</ul>
+<hr>
+<p>按引用传递允许被调用的函数能够访问调用函数中的变量。    </p>
+<blockquote>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+void swapr(int &amp; a ,int &amp; b);
+int main()
+{
+    int wallet1 = 200;
+    int wallet2 = 300;    
+    swapr(wallet1 , wallet2);
+    cout&lt; wallet1 &lt;&lt; &quot; &quot; &lt;&lt; wallet2;
+    return 0;
+}
+void swapr(int &amp; a ,int &amp; b)
+{
+    int temp;
+    a = temp;
+    a = b;
+    b = temp;
+}</code></pre></blockquote>
+<hr>
+<h2 id="临时变量，引用参数和const"><a href="#临时变量，引用参数和const" class="headerlink" title="临时变量，引用参数和const"></a>临时变量，引用参数和const</h2><p>如果实参与引用参数不匹配，c++将生成临时变量。当前，仅当参数为const引用时，c++才允许这样做。 </p>
+<p>如果引用参数是const，则编译器在下面这两种情况下生成临时变量；</p>
+<ul>
+<li>实参的类型正确，但不是左值，</li>
+<li>实参的类型不正确，但可以转换为正确的类型。</li>
+</ul>
+<hr>
+<p>什么是左值，左值参数是可以被引用的数据对象，例如，变量，数组元素，结构成员，引用和解除引用的指针都是左值，非左值包括字面常量(用引号括起来的字符串除外，它们是由其地址所表示)和包含多项的表达式。在C语言中，左值最初指的是出现在复制语句左边的实体，但这是引入关键字const之前的情况。现在，常规变量和const变量都可视为左值，因为可以通过地址访问它们。常规变量属于可修改的左值，而const变量属于不可修改的左值。</p>
+<hr>
+<p>尽可能使用const         </p>
+<ul>
+<li>使用const可以避免无意中修改数据的编程错误，</li>
+<li>使用const使含糊能够处理const和非const实参，</li>
+<li>使用const引用使函数能够正确生成并使用临时变量。<br>因此尽可能把引用形参声明为const。       </li>
+</ul>
+<hr>
+<ul>
+<li>右值引用……</li>
+</ul>
+<h2 id="将引用用于结构"><a href="#将引用用于结构" class="headerlink" title="将引用用于结构"></a>将引用用于结构</h2><blockquote>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+struct price
+{
+    int a;
+    int b;
+    int c;
+    int num=3;
+};
+price &amp; sum(price&amp; p , const int &amp;numP)
+{
+     cout &lt;&lt; numP &lt;&lt; endl;    
+     cout &lt;&lt; p.a &lt;&lt; &quot; &quot; &lt;&lt; p.b &lt;&lt; &quot; &quot; &lt;&lt; p.c &lt;&lt; endl;
+    return p;
+}
+int main()
+{
+    price price1 = { 1,2,3,3 };
+    price price2 = sum(price1 , price1.num);
+    cout &lt;&lt; price2.a &lt;&lt; &quot; &quot; &lt;&lt; price2.b &lt;&lt; &quot; &quot; &lt;&lt; price2.c &lt;&lt; endl;
+    return 0;
+}</code></pre></blockquote>
+<ul>
+<li>如果你要使用引用返回值，但又不允许price price2 = sum(price1 , price1.num)这样的赋值操作，只需将返回类型声明为const引用：<pre><code>const price &amp; sum(price&amp; p,const int &amp;numP);</code></pre></li>
+</ul>
+<h2 id="将引用用于类对象"><a href="#将引用用于类对象" class="headerlink" title="将引用用于类对象"></a>将引用用于类对象</h2><ul>
+<li>将c分格字符串用作string对象引用参数<br>……</li>
+</ul>
+<ol>
+<li>派生类继承了基类的方法；</li>
+<li>基类引用可以指向派生类对象，而无需进行类型转换。即可以定义一个接受基类引用作为参数的函数，调用改函数时，可以将基类对象作为参数，也可以将派生类对象作为参数。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;fstream&gt;</span><br><span class="line">#include &lt;cstdlib&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">void file_it(ostream&amp; os, double fo, const double fe[], int n);</span><br><span class="line">const int LIMIT &#x3D; 5;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	ofstream fout;</span><br><span class="line">	const char* fn &#x3D; &quot;ep-date.txt&quot;;</span><br><span class="line">	fout.open(fn);</span><br><span class="line">	if (!fout.is_open())</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;can&#39;t open&quot; &lt;&lt; fn &lt;&lt; endl;</span><br><span class="line">		exit(EXIT_FAILURE);</span><br><span class="line">	&#125;</span><br><span class="line">	double objective;</span><br><span class="line">	cout &lt;&lt; &quot;enter the focal length of your &quot;</span><br><span class="line">		&quot;telescope objective in mm: &quot;;</span><br><span class="line">	cin &gt;&gt; objective;</span><br><span class="line">	double eps[LIMIT];</span><br><span class="line">	cout &lt;&lt; &quot;enter the focal lengths, in mm, of &quot; &lt;&lt; LIMIT</span><br><span class="line">		&lt;&lt; &quot;eyepieces:\n&quot;;</span><br><span class="line">	for (int i &#x3D; 0; i &lt; LIMIT;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;eyepieces #&quot; &lt;&lt; i + 1 &lt;&lt; &quot;: &quot;;</span><br><span class="line">		cin &gt;&gt; eps[i];</span><br><span class="line">	&#125;</span><br><span class="line">	file_it(fout, objective, eps, LIMIT);</span><br><span class="line">	file_it(cout, objective, eps, LIMIT);</span><br><span class="line">	cout &lt;&lt; &quot;done\n&quot;;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line">void file_it(ostream&amp; os, double fo, const double fe[], int n)</span><br><span class="line">&#123;</span><br><span class="line">	ios_base::fmtflags initial;</span><br><span class="line">	initial &#x3D; os.setf(ios_base::fixed);</span><br><span class="line">	os.precision(0);</span><br><span class="line">	os &lt;&lt; &quot;focal length of objective: &quot; &lt;&lt; fo &lt;&lt; &quot; mm\n&quot;;</span><br><span class="line">	os.setf(ios::showpoint);</span><br><span class="line">	os.precision(1);</span><br><span class="line">	os.width(12);</span><br><span class="line">	os &lt;&lt; &quot;d.1 eyepiese&quot;;</span><br><span class="line">	os.width(15);</span><br><span class="line">	os &lt;&lt; &quot;magnification&quot; &lt;&lt; endl;</span><br><span class="line">	for (int i &#x3D; 0;i &lt; n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		os.width(12);</span><br><span class="line">		os &lt;&lt; fe[i];</span><br><span class="line">		os.width(15);</span><br><span class="line">		os &lt;&lt; int(fo &#x2F; fe[i] + 0.5) &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	os.setf(initial);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="何时使用引用参数"><a href="#何时使用引用参数" class="headerlink" title="何时使用引用参数"></a>何时使用引用参数</h2><p>使用引用函数的主要原因有两个</p>
+<ul>
+<li>程序员能够修改调用函数中的数据对象。</li>
+<li>通过传递引用而不是整个数据对象，可以提高程序的运行速度。</li>
+</ul>
+<p>对于使用传递的值而不作修改的函数</p>
+<ul>
+<li>如果数据对象很小，如内置数据类型或小型结构，则按值传递。</li>
+<li>如果数据对象时数组，则使用指针，这是唯一的选择，并将指针声明为指向const的指针</li>
+<li>如果数据对象时较大的结构，则使用const指针或const引用，以提高程序的效率。这样可以节省复制结构所需的时间和空间。</li>
+<li>如果数据对象时类对象，则使用const引用。类设计的予以常常要求使用引用。传递类对象参数的标准方式时按引用传递。</li>
+</ul>
+<p>对于修改调用函数中的数据的函数：</p>
+<ul>
+<li>如果数据对象是内置数据类型，则使用指针。</li>
+<li>如果数据对象是数组，只能使用指针。</li>
+<li>如果数据对象是结构，使用引用或指针。</li>
+<li>如果数据对象是类对象，则使用引用。</li>
+</ul>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/22/c++2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/15/c++1/" class="archive-article-date">
-  	<time datetime="2020-04-15T08:34:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/15/c++1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">c++1</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/15/c++1/">c++1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数探幽"><span class="toc-number">1.</span> <span class="toc-text">函数探幽</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2020-4-23"><span class="toc-number">1.0.1.</span> <span class="toc-text">2020&#x2F;4&#x2F;23</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2020-4-22"><span class="toc-number">1.0.2.</span> <span class="toc-text">2020&#x2F;4&#x2F;22</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内联函数"><span class="toc-number"></span> <span class="toc-text">内联函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#引用变量"><span class="toc-number"></span> <span class="toc-text">引用变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#临时变量，引用参数和const"><span class="toc-number">1.</span> <span class="toc-text">临时变量，引用参数和const</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将引用用于结构"><span class="toc-number">2.</span> <span class="toc-text">将引用用于结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将引用用于类对象"><span class="toc-number">3.</span> <span class="toc-text">将引用用于类对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#何时使用引用参数"><span class="toc-number">4.</span> <span class="toc-text">何时使用引用参数</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/15/hello-world/" class="archive-article-date">
-  	<time datetime="2020-04-15T05:28:03.815Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/15/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -265,8 +448,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
