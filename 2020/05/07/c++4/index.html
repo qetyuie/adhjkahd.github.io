@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>c++4 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="使用类2020&#x2F;5&#x2F;72020&#x2F;7&#x2F;3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++4">
+<meta property="og:url" content="http://yoursite.com/2020/05/07/c++4/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用类2020&#x2F;5&#x2F;72020&#x2F;7&#x2F;3">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-07T11:07:27.000Z">
+<meta property="article:modified_time" content="2020-07-03T07:15:28.336Z">
 <meta property="article:author" content="CodeOn">
 <meta name="twitter:card" content="summary">
   
@@ -146,211 +150,235 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-c++4" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
-  	<time datetime="2020-06-22T11:07:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+    <h1 class="article-title" itemprop="name">
+      c++4
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/07/c++4/" class="archive-article-date">
+        
+        <a href="/2020/05/07/c++4/" class="archive-article-date">
   	<time datetime="2020-05-07T11:07:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/07/c++4/">c++4</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="使用类"><a href="#使用类" class="headerlink" title="使用类"></a>使用类</h1><h4 id="2020-5-7"><a href="#2020-5-7" class="headerlink" title="2020/5/7"></a>2020/5/7</h4><h4 id="2020-7-3"><a href="#2020-7-3" class="headerlink" title="2020/7/3"></a>2020/7/3</h4><a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<h2 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h2><h3 id="1-实例"><a href="#1-实例" class="headerlink" title="1.实例"></a><font color=orange>1.实例</font></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Time</span><br><span class="line">&#123;</span><br><span class="line">    public;</span><br><span class="line">    Time operator+(const Time &amp;t) const;</span><br><span class="line">&#125;</span><br><span class="line">Time Time::operator+(const Time &amp;t) const</span><br><span class="line">&#123;</span><br><span class="line">    Time sum;</span><br><span class="line">    sum.minutes &#x3D; minutes + t.minuties;</span><br><span class="line">    sum.hours &#x3D; hours + t.hours + sum.minutes&#x2F;60;</span><br><span class="line">    sum.minutes %&#x3D; 60;</span><br><span class="line">    return sum;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;total &#x3D; coding + fixing;</span><br><span class="line">&#x2F;&#x2F;total &#x3D; coding.operator+(fixing);</span><br><span class="line">&#x2F;&#x2F;t4 &#x3D; t1 + t2 + t3;</span><br><span class="line">&#x2F;&#x2F;t4 &#x3D; t1.operator+(t2.operator+ (t3));</span><br><span class="line">运算符左侧的对象coding时调用对象，右边的额对象fixing时作为参数被传毒的对象。</span><br></pre></td></tr></table></figure>
+<h3 id="2-重载限制"><a href="#2-重载限制" class="headerlink" title="2. 重载限制"></a><font color=orange>2. 重载限制</font></h3><p>(1) 重载后的运算符至少又一个操作符是用户定义的类型，这是防止用户为标准类型重载运算符。例如不能将（-）重载为计算两个double值的和，而不是它们的差。</p>
+<p>(2) 不能修改运算符的优先级。新的运算符与原来的运算符具有相同的优先级。</p>
+<p>(3) 不能创建新的运算符，如不能定义operator**（）函数来表示求幂。</p>
+<p>(4) 下面的运算符不能重载。</p>
+<p>sizeof:</p>
+<p>.  ：成员运算符</p>
+<p>.* ：成员指针运算符</p>
+<p>?: ：条件运算符</p>
+<p>:: ：作用域解析运算符</p>
+<p>typeid : 一个RTTI运算符</p>
+<p>const_cast :强制类型转换运算符</p>
+<p>dynamic_cast :强制类型转换运算符</p>
+<p>reinterpret_cast :强制类型转换运算符</p>
+<p>static_cast :强制类型转换运算符</p>
+<p>(5) 只能通过成员函数进行重载的</p>
+<p> =     : 赋值运算符</p>
+<p>( )    : 函数调用运算符</p>
+<p>[ ]    : 下标运算符</p>
+<p>-&gt;     : 通过指针访问类成员的运算符</p>
+<p>(6) 大多数运算符都可以通过成员或非成员函数进行重载。</p>
+<h2 id="友元"><a href="#友元" class="headerlink" title="友元"></a>友元</h2><p><font color=Pink>友元函数，友元类，友元成员函数;</font></p>
+<p><font color=orange>(1).</font></p>
+<p>为何需要友元，在为类重载二元运算符时，常常需要有元。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">friend Time operator*(double m, connst Time &amp;t);</span><br><span class="line">Time operator*(double m, const Time &amp;t)</span><br><span class="line">&#123;</span><br><span class="line">    Time result;</span><br><span class="line">    long totalminutes &#x3D; t.hours * mult *60 +t.minutes * mult ;</span><br><span class="line">    result.hours &#x3D; totalminutes &#x2F; 60;</span><br><span class="line">    resule.minutes &#x3D; tatalminutes % 60;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br><span class="line">A &#x3D; 2.75 * B;</span><br><span class="line">A &#x3D; operator*(2.75 , B);</span><br><span class="line"></span><br><span class="line">类的友元函数是非成员函数，其访问权限和成员函数相同。</span><br></pre></td></tr></table></figure>
+<p><font color=orange>(2).常用的友元，重载&lt;&lt;运算符</font></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ostream &amp; operator&lt;&lt;(ostream &amp; os, const Time &amp; t)</span><br><span class="line">&#123;</span><br><span class="line">    os &lt;&lt; t.hours &lt;&lt; &quot;hours, &quot; &lt;&lt; t.minutes &lt;&lt; &quot;minutes&quot;;</span><br><span class="line">    return os;</span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; &quot;Trip time: &quot; &lt;&lt; trip &lt;&lt; &quot;(Tuesday)\n&quot; ;</span><br></pre></td></tr></table></figure>
+<h2 id="类的自动类型转换和强制类型转换"><a href="#类的自动类型转换和强制类型转换" class="headerlink" title="类的自动类型转换和强制类型转换"></a>类的自动类型转换和强制类型转换</h2><p>c++中，如果两种类型兼容，则自动将这个值转换为接收变量的类型。</p>
+<h3 id="1-构造函数完成类型转换"><a href="#1-构造函数完成类型转换" class="headerlink" title="1. 构造函数完成类型转换"></a><font color=orange>1. 构造函数完成类型转换</font></h3><p>只接受一个参数的构造函数才能作为转换函数，或者如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Stonwt(double lbs);</span><br><span class="line"></span><br><span class="line">Stonwt(int stn, double lbs &#x3D; 0);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>只接受一个参数的构造函数定义了从参数类型到类类型的转换，如果使用关键字explicit限定了这种构造函数，则它只能用于显示转换，否则也可以用于隐士转换。</li>
+</ul>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Stonewt jumbo(7000);</span><br><span class="line">jubmo &#x3D; 7300;</span><br><span class="line">&#x2F;&#x2F;都使用 Stonwt(double lbs)；先将int转换为double，再使用构造函数</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果这种转换不存在二义性，才会进行这种二步转换。如果还定义了Stonwt(long lbs);<br>编辑器将拒绝这些语句。</li>
+</ul>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void display(const Stonewt &amp; st, int n)</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">display(422, 2);</span><br><span class="line"></span><br><span class="line">display()原型表明，第一个参数是Stonewt对象，此时，编译器查找Stonewt(int),以便及那个int转换为Stonewt，由于没有找到，编译器寻找接收其他内置类型（int可以转换为这种类型）的构造函数。然后使用Stonewt(double)。</span><br></pre></td></tr></table></figure>
+<h3 id="2-转换函数"><a href="#2-转换函数" class="headerlink" title="2. 转换函数"></a><font color=orange>2. 转换函数</font></h3><p><font color=Pink>构造函数只用于从某种类型到类类型的转换，要进行相反的转换，必须使用特殊的c++运算符函数-转换函数。</font></p>
+<ul>
+<li>转换函数必须是类方法</li>
+<li>转换函数不能指定返回类型</li>
+<li>转换函数不能有参数</li>
+</ul>
+<p>转换函数是用户定义的强制类型转换,用户可以像使用强制类型转换那样使用。例如定义了从Stonewt到double的转换，就可以使用下面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">operator double();</span><br><span class="line">Stonewt::operator double()</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">Stonewt wolfe(285.7);</span><br><span class="line">double host &#x3D; double(wolfe);</span><br><span class="line">double thinker &#x3D; (double) wolfe;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>也可以使用explicit。</li>
+</ul>
+<hr>
+<p><font color=red>注意：</font><br>和转换构造函数一样，转换函数也有优缺点。提供自动，隐式转换的函数所存在的问题是，在用户不希望进行转换时，转换函数的也能进行转换。</p>
+<p>1.可以声明为显式explicit，</p>
+<p>2.例如：用 int Stonewt：：stone_to_int( ) 代替 Stonewt::operator int( ) 。</p>
+<hr>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/07/c++4/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/29/c++0/" class="archive-article-date">
-  	<time datetime="2020-04-29T05:56:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/06/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          操作系统
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/29/c++0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">c++0</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/29/c++0/">c++0</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用类"><span class="toc-number">1.</span> <span class="toc-text">使用类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2020-5-7"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">2020&#x2F;5&#x2F;7</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2020-7-3"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">2020&#x2F;7&#x2F;3</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运算符重载"><span class="toc-number">1.1.</span> <span class="toc-text">运算符重载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-实例"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-重载限制"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 重载限制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#友元"><span class="toc-number">1.2.</span> <span class="toc-text">友元</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类的自动类型转换和强制类型转换"><span class="toc-number">1.3.</span> <span class="toc-text">类的自动类型转换和强制类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-构造函数完成类型转换"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 构造函数完成类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-转换函数"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. 转换函数</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/24/c++3/" class="archive-article-date">
-  	<time datetime="2020-04-24T10:58:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-24</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/24/c++3/">c++3</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/22/c++2/" class="archive-article-date">
-  	<time datetime="2020-04-22T13:27:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/22/c++2/">c++2</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/15/c++1/" class="archive-article-date">
-  	<time datetime="2020-04-15T08:34:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/15/c++1/">c++1</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/15/hello-world/" class="archive-article-date">
-  	<time datetime="2020-04-15T05:28:03.815Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -373,8 +401,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
